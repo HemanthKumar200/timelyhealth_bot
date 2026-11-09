@@ -1,0 +1,16 @@
+.venv/
+.playwright-browsers/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.env
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+data/chroma_db/
+data/page_hashes.json
+data/last_sync.stamp
+data/rag_accuracy_report.json
+data/sync/
+.DS_Store
+Thumbs.db

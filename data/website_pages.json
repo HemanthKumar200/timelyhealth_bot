@@ -1,0 +1,25 @@
+{
+  "base_url": "https://www.timelyhealth.in/",
+  "allowed_hosts": [
+    "timelyhealth.in",
+    "www.timelyhealth.in",
+    "iryax.com",
+    "www.iryax.com"
+  ],
+  "pages": {
+    "home": "https://www.timelyhealth.in/",
+    "about": "https://www.timelyhealth.in/about",
+    "services": "https://www.timelyhealth.in/service",
+    "who_we_serve": "https://www.timelyhealth.in/whoweserve",
+    "products": "https://www.timelyhealth.in/products",
+    "recruitment": "https://iryax.com/recruitment",
+    "attendance": "https://iryax.com/attendance",
+    "medical_camps": "https://iryax.com/camp",
+    "workspace": "https://iryax.com/workspace",
+    "membership": "https://www.timelyhealth.in/membership",
+    "partners": "https://www.timelyhealth.in/partners",
+    "contact": "https://www.timelyhealth.in/contact",
+    "privacy": "https://www.timelyhealth.in/privacy-policy",
+    "timelyone_privacy": "https://www.timelyhealth.in/timelyone-privacypolicy"
+  }
+}

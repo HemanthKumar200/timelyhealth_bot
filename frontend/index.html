@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timely Health Live Chat</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, Arial, sans-serif; background: #f4faf6; color: #12352c; }
+    main { max-width: 720px; margin: 0 auto; padding: 40px 20px 120px; }
+    h1 { font-size: 36px; line-height: 1.15; }
+    p { color: #5b7268; line-height: 1.6; }
+    pre { background: #fff; border: 1px solid #dceee4; border-radius: 12px; padding: 12px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Timely Health live chat demo</h1>
+    <p>Open the green button in the corner to talk to the RAG chatbot.</p>
+    <p>Add the widget to timelyhealth.in with one script tag:</p>
+    <pre>&lt;script src="https://YOUR-CHAT-HOST/static/chat-widget.js" data-api-base="https://YOUR-CHAT-HOST"&gt;&lt;/script&gt;</pre>
+  </main>
+  <script>
+    window.TH_CHAT_OVERRIDES = {};
+  </script>
+  <script src="/static/chat-widget.js"></script>
+</body>
+</html>

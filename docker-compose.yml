@@ -1,0 +1,31 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+    expose:
+      - "11434"
+
+  app:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      APP_ENV: production
+      APP_HOST: 0.0.0.0
+      APP_PORT: 8000
+      OLLAMA_HOST: http://ollama:11434
+      CHROMA_DB_PATH: ./data/chroma_db
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    volumes:
+      - chroma_data:/app/data/chroma_db
+      - ./data/website_pages.json:/app/data/website_pages.json:ro
+    depends_on:
+      - ollama
+
+volumes:
+  ollama_data:
+  chroma_data:

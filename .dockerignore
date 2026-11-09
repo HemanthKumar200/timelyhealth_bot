@@ -1,0 +1,14 @@
+.git
+.venv
+__pycache__
+**/__pycache__
+*.pyc
+.env
+data/chroma_db
+data/raw
+data/sync
+data/page_hashes.json
+data/last_sync.stamp
+data/rag_accuracy_report.json
+*.md
+agent-transcripts
