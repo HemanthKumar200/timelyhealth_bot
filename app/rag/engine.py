@@ -620,6 +620,20 @@ def detect_website_topic(question):
     ) or re.search(r"\b(enquiry|inquiry)\b", q):
         return ["partners"], "partners"
 
+    audience_page = next(
+        (
+            key for key in PAGES
+            if {"who", "serve"}.issubset(set(key.replace("-", "_").split("_")))
+        ),
+        None,
+    )
+    if (
+        audience_page
+        and re.match(r"^\s*who\b", q)
+        and not (asked_host and asked_host.startswith("iryax"))
+    ):
+        return [audience_page], audience_page
+
     if re.search(r"\b(difference between|compare|comparison|versus)\b|\bvs\b", q):
         if re.search(r"\btimely\b", q) and re.search(r"\biryax\b", q):
             return ["about"] + iryax_page_keys(), "comparison"
@@ -636,6 +650,8 @@ def detect_website_topic(question):
         r"\b(who can use|who do you serve|who does .+ serve|who we serve|"
         r"target audience|your customers|which (people|customers|organizations)|for whom)\b",
         q,
+    ) and not re.search(r"\bpartner\b", q) and not (
+        asked_host and asked_host.startswith("iryax")
     ):
         return ["who_we_serve"], "who_we_serve"
 
